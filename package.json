@@ -1,6 +1,6 @@
 {
   "name": "@vroskus/library-mixpanel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mixpanel",
   "author": "Vilius Roškus <vilius@regattas.eu>",
   "license": "MIT",
@@ -9,11 +9,6 @@
     "url": "git+https://github.com/vroskus/library-mixpanel.git"
   },
   "main": "dist/index.js",
-  "files": [
-    "dist/browser.js",
-    "dist/index.js",
-    "dist/node.js"
-  ],
   "scripts": {
     "postinstall": "npm run build",
     "build": "tsc",
@@ -22,6 +17,8 @@
     "test:e2e": "echo 'No tests'"
   },
   "dependencies": {
+    "@types/lodash": "4.14.192",
+    "@types/mixpanel": "2.14.4",
     "lodash": "4.17.21",
     "mixpanel": "0.17.0",
     "mixpanel-browser": "2.45.0"

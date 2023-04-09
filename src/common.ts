@@ -20,7 +20,7 @@ const event: $Event = {
   request: 'Request',
 };
 
-class MixpanelService<M extends Record<string, any>> {
+class MixpanelService<M extends Record<string, unknown>> {
   instance: M;
 
   event: $Event;
