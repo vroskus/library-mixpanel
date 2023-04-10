@@ -1,7 +1,17 @@
+// Global Types
+import type {
+  Mixpanel as $MixpanelNode,
+} from 'mixpanel';
+import type {
+  Mixpanel as $MixpanelBrowser,
+} from 'mixpanel-browser';
+
 // Helpers
 import _ from 'lodash';
 
 // Types
+type $Mixpanel = $MixpanelNode | $MixpanelBrowser;
+
 type $User = {
   id: string;
   $name: string;
@@ -20,14 +30,14 @@ const event: $Event = {
   request: 'Request',
 };
 
-class MixpanelService<M extends Record<string, unknown>> {
-  instance: M;
+class MixpanelService {
+  instance: $Mixpanel;
 
   event: $Event;
 
   distinctId: string | void;
 
-  constructor(Mixpanel: M, token: string) {
+  constructor(Mixpanel: $Mixpanel, token: string) {
     if (token !== '') {
       this.instance = Mixpanel.init(token) || Mixpanel;
     }

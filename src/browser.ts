@@ -9,7 +9,7 @@ import type {
   $Config,
 } from './types';
 
-class MixpanelServiceWrap<C extends $Config> extends MixpanelService<Mixpanel> {
+class MixpanelServiceWrap<C extends $Config> extends MixpanelService {
   constructor({
     token,
   }: C) {
