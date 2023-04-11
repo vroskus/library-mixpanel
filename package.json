@@ -1,6 +1,6 @@
 {
   "name": "@vroskus/library-mixpanel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mixpanel",
   "author": "Vilius Roškus <vilius@regattas.eu>",
   "license": "MIT",
