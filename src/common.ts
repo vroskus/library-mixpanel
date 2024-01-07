@@ -10,18 +10,18 @@ import type {
 import _ from 'lodash';
 
 // Types
-type $Mixpanel = $MixpanelNode | $MixpanelBrowser;
+type $Mixpanel = $MixpanelBrowser | $MixpanelNode;
 
 type $User = {
-  id: string;
-  $name: string;
   $email: string;
+  $name: string;
+  id: string;
 };
 
 type $Event = {
   pageVisit: 'Page visit';
-  request: 'Request';
   queueAction: 'Queue action';
+  request: 'Request';
 };
 
 const event: $Event = {
