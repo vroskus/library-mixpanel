@@ -37,6 +37,8 @@ class MixpanelService {
 
   distinctId: string | void;
 
+  serviceName: string | void;
+
   constructor(Mixpanel: $Mixpanel, token: string) {
     if (token !== '') {
       this.instance = Mixpanel.init(token) || Mixpanel;
@@ -67,6 +69,10 @@ class MixpanelService {
     }
   }
 
+  setServiceName(serviceName: string): void {
+    this.serviceName = serviceName;
+  }
+
   trackEvent(eventTitle: $Event[keyof $Event], data: object): void {
     if (this.instance) {
       const dataHasDistinctId: boolean = _.has(
@@ -79,6 +85,14 @@ class MixpanelService {
           data,
           'distinct_id',
           this.distinctId,
+        );
+      }
+
+      if (this.serviceName) {
+        _.set(
+          data,
+          'Service',
+          this.serviceName,
         );
       }
 
