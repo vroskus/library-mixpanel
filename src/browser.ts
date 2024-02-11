@@ -11,11 +11,13 @@ import type {
 
 class MixpanelServiceWrap<C extends $Config> extends MixpanelService {
   constructor({
+    serviceName,
     token,
   }: C) {
     super(
       Mixpanel,
       token,
+      serviceName,
     );
   }
 }

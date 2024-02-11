@@ -39,10 +39,12 @@ class MixpanelService {
 
   serviceName: string | void;
 
-  constructor(Mixpanel: $Mixpanel, token: string) {
+  constructor(Mixpanel: $Mixpanel, token: string, serviceName?: string) {
     if (token !== '') {
       this.instance = Mixpanel.init(token) || Mixpanel;
     }
+
+    this.serviceName = serviceName;
 
     this.event = event;
   }
