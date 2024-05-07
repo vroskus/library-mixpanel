@@ -35,9 +35,9 @@ class MixpanelService {
 
   event: $Event;
 
-  distinctId: string | void;
+  distinctId: string | undefined;
 
-  serviceName: string | void;
+  serviceName: string | undefined;
 
   constructor(Mixpanel: $Mixpanel, token: string, serviceName?: string) {
     if (token !== '') {
@@ -82,7 +82,7 @@ class MixpanelService {
         'distinct_id',
       );
 
-      if (dataHasDistinctId === false) {
+      if (dataHasDistinctId === false && this.distinctId) {
         _.set(
           data,
           'distinct_id',
