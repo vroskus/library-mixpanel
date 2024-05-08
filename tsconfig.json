@@ -15,7 +15,8 @@
     "lib": [
       "dom",
       "es6"
-    ]
+    ],
+    "types": []
   },
   "exclude": [
     "node_modules",
