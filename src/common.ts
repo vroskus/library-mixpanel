@@ -9,6 +9,12 @@ import type {
 // Helpers
 import _ from 'lodash';
 
+type $Event = {
+  pageVisit: 'Page visit';
+  queueAction: 'Queue action';
+  request: 'Request';
+};
+
 // Types
 type $Mixpanel = $MixpanelBrowser | $MixpanelNode;
 
@@ -16,12 +22,6 @@ type $User = {
   $email: string;
   $name: string;
   id: string;
-};
-
-type $Event = {
-  pageVisit: 'Page visit';
-  queueAction: 'Queue action';
-  request: 'Request';
 };
 
 const event: $Event = {
