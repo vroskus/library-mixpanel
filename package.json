@@ -15,21 +15,22 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "npm run test:eslint && npm run test:e2e",
+    "test": "npm run test:eslint && npm run test:type && npm run test:e2e",
     "test:eslint": "eslint src --fix",
+    "test:type": "tsc",
     "test:e2e": "echo 'No tests'"
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "mixpanel": "^0.18.1",
-    "mixpanel-browser": "^2.63.0"
+    "mixpanel": "^0.20.0",
+    "mixpanel-browser": "^2.73.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/lodash": "^4.17.16",
+    "@types/jest": "^30.0.0",
+    "@types/lodash": "^4.17.23",
     "@types/mixpanel": "^2.14.9",
-    "@types/node": "^22.14.0",
-    "@vroskus/eslint-config": "^1.0.25",
-    "typescript": "^5.8.3"
+    "@types/node": "^25.0.9",
+    "@vroskus/eslint-config": "^1.0.30",
+    "typescript": "^5.9.3"
   }
 }
